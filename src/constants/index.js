@@ -15,7 +15,7 @@ export const SUPPORTED_LIST_URLS__NO_ENS = ['https://tokens.honeyswap.org']
 
 // hide from overview list
 export const OVERVIEW_TOKEN_BLACKLIST = [
-  '0x495c7f3a713870f68f8b418b355c085dfdc412c3',
+  '0x5f49887120c883917a7ac192997bd2e98033af62',
   '0xc3761eb917cd790b30dad99f6cc5b4ff93c4f9ea',
   '0xe31debd7abff90b06bca21010dd860d8701fd901',
   '0xfc989fbb6b3024de5ca0144dc23c18a063942ac1'
