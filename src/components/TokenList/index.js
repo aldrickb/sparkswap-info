@@ -9,6 +9,7 @@ import { CustomLink } from '../Link'
 import Row from '../Row'
 import { Divider } from '..'
 
+import { useListedTokensMap } from '../../contexts/Application'
 import { formattedNum, formattedPercent } from '../../utils'
 import { useMedia } from 'react-use'
 import { withRouter } from 'react-router-dom'
@@ -134,6 +135,8 @@ function TopTokenList({ tokens, itemMax = 10 }) {
   const below680 = useMedia('(max-width: 680px)')
   const below600 = useMedia('(max-width: 600px)')
 
+  const listedTokensMap = useListedTokensMap();
+
   useEffect(() => {
     setMaxPage(1) // edit this to do modular
     setPage(1)
@@ -144,7 +147,7 @@ function TopTokenList({ tokens, itemMax = 10 }) {
       tokens &&
       Object.keys(tokens)
         .filter(key => {
-          return !OVERVIEW_TOKEN_BLACKLIST.includes(key)
+          return !OVERVIEW_TOKEN_BLACKLIST.includes(key) && listedTokensMap[key]
         })
         .map(key => tokens[key])
     )
