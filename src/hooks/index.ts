@@ -4,13 +4,13 @@ import Vibrant from 'node-vibrant'
 import { hex } from 'wcag-contrast'
 import { isAddress } from '../utils'
 import copy from 'copy-to-clipboard'
+import { useListedTokensMap } from '../contexts/Application'
 
 export function useColor(tokenAddress, token) {
   const [color, setColor] = useState('#2172E5')
+  const listedTokensMap = useListedTokensMap()
   if (tokenAddress) {
-    const path = `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/${isAddress(
-      tokenAddress
-    )}/logo.png`
+    const path = listedTokensMap[tokenAddress]?.logoURI
     if (path) {
       Vibrant.from(path).getPalette((err, palette) => {
         if (palette && palette.Vibrant) {
