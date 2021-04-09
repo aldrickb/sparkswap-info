@@ -163,21 +163,6 @@ function SideNav({ history }) {
             )}
           </AutoColumn>
           <AutoColumn gap="0.5rem" style={{ marginLeft: '.75rem', marginBottom: '4rem' }}>
-            <HeaderText>
-              <Link href="https://honeyswap.org" target="_blank">
-                Honeyswap.org
-              </Link>
-            </HeaderText>
-            <HeaderText>
-              <Link href="https://about.1hive.org/docs/honeyswap" target="_blank">
-                Docs
-              </Link>
-            </HeaderText>
-            <HeaderText>
-              <Link href="https://twitter.com/1hiveorg" target="_blank">
-                Twitter
-              </Link>
-            </HeaderText>
             <Toggle isActive={isDark} toggle={toggleDarkMode} />
           </AutoColumn>
           {!below1180 && (
