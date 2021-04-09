@@ -4,7 +4,7 @@ import { HttpLink } from 'apollo-link-http'
 
 export const client = new ApolloClient({
   link: new HttpLink({
-    uri: 'https://api.thegraph.com/subgraphs/name/1hive/honeyswap-v2'
+    uri: 'https://api.thegraph.com/subgraphs/name/aldrickb/sparkswapv2'
   }),
   cache: new InMemoryCache(),
   shouldBatch: true
@@ -20,7 +20,7 @@ export const healthClient = new ApolloClient({
 
 export const v1Client = new ApolloClient({
   link: new HttpLink({
-    uri: 'https://api.thegraph.com/subgraphs/name/1hive/uniswap'
+    uri: 'https://api.thegraph.com/subgraphs/name/aldrickb/sparkswap'
   }),
   cache: new InMemoryCache(),
   shouldBatch: true
@@ -28,7 +28,7 @@ export const v1Client = new ApolloClient({
 
 export const blockClient = new ApolloClient({
   link: new HttpLink({
-    uri: 'https://api.thegraph.com/subgraphs/name/1hive/xdai-blocks'
+    uri: 'https://api.thegraph.com/subgraphs/name/aldrickb/blocks'
   }),
   cache: new InMemoryCache()
 })
