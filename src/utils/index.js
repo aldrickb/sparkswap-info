@@ -304,10 +304,10 @@ export const setThemeColor = theme => document.documentElement.style.setProperty
 export const Big = number => new BigNumber(number)
 
 export const urls = {
-  showTransaction: tx => `https://blockscout.com/poa/xdai/tx/${tx}/`,
+  showTransaction: tx => `https://bscscan.com/tx/${tx}/`,
   showAddress: address => `https://bscscan.com/address/${address}/`,
   showToken: address => `https://bscscan.com/address/${address}/`,
-  showBlock: block => `https://blockscout.com/poa/xdai/blocks/11210674${block}/`
+  showBlock: block => `https://bscscan.com/block/${block}/`
 }
 
 export const formatTime = unix => {
