@@ -16,7 +16,9 @@ export const SUPPORTED_LIST_URLS__NO_ENS = [
 ]
 
 // hide from overview list
-export const OVERVIEW_TOKEN_BLACKLIST = []
+export const OVERVIEW_TOKEN_BLACKLIST = [
+  "0xfae613ada8caf15c13c9c45138a262e814daa71f" // TTKb-BNB Pair
+]
 
 // pair blacklist
 export const PAIR_BLACKLIST = []
