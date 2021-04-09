@@ -390,7 +390,7 @@ function TokenPage({ address, history }) {
                   </Column>
                   <ButtonLight color={backgroundColor}>
                     <Link color={backgroundColor} external href={'https://bscscan.com/address/' + address}>
-                      View on Blockscout ↗
+                      View on BSCScan ↗
                     </Link>
                   </ButtonLight>
                 </TokenDetailsLayout>
