@@ -17,11 +17,13 @@ export const SUPPORTED_LIST_URLS__NO_ENS = [
 
 // hide from overview list
 export const OVERVIEW_TOKEN_BLACKLIST = [
-  "0xfae613ada8caf15c13c9c45138a262e814daa71f" // TTKb-BNB Pair
+  '0x9ee47c9630a41525c139ef9ca42ba3b238ecfecf'
 ]
 
 // pair blacklist
-export const PAIR_BLACKLIST = []
+export const PAIR_BLACKLIST = [
+  '0xfae613ada8caf15c13c9c45138a262e814daa71f' // TTKb-BNB
+]
 
 /**
  * For tokens that cause erros on fee calculations
