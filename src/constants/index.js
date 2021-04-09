@@ -11,7 +11,9 @@ export const timeframeOptions = {
 }
 
 // token list urls to fetch tokens from - use for warnings on tokens and pairs
-export const SUPPORTED_LIST_URLS__NO_ENS = ['https://tokens.honeyswap.org']
+export const SUPPORTED_LIST_URLS__NO_ENS = [
+  'https://raw.githubusercontent.com/sparkpointio/spark-swap-interface/develop/src/constants/token/sparkswap.json'
+]
 
 // hide from overview list
 export const OVERVIEW_TOKEN_BLACKLIST = [
