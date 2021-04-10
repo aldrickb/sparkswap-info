@@ -247,49 +247,6 @@ function AccountPage({ account }) {
               )}
             </DropdownWrapper>
           )}
-          {!hideLPContent && (
-            <Panel style={{ height: '100%', marginBottom: '1rem' }}>
-              <AutoRow gap="20px">
-                <AutoColumn gap="10px">
-                  <RowBetween>
-                    <TYPE.body>Liquidity (Including Fees)</TYPE.body>
-                    <div />
-                  </RowBetween>
-                  <RowFixed align="flex-end">
-                    <TYPE.header fontSize={'24px'} lineHeight={1}>
-                      {positionValue
-                        ? formattedNum(positionValue, true)
-                        : positionValue === 0
-                          ? formattedNum(0, true)
-                          : '-'}
-                    </TYPE.header>
-                  </RowFixed>
-                </AutoColumn>
-                <AutoColumn gap="10px">
-                  <RowBetween>
-                    <TYPE.body>Fees Earned (Cumulative)</TYPE.body>
-                    <div />
-                  </RowBetween>
-                  <RowFixed align="flex-end">
-                    <TYPE.header fontSize={'24px'} lineHeight={1} color={aggregateFees && 'green'}>
-                      {aggregateFees ? formattedNum(aggregateFees, true, true) : '-'}
-                    </TYPE.header>
-                  </RowFixed>
-                </AutoColumn>
-              </AutoRow>
-            </Panel>
-          )}
-          {!hideLPContent && (
-            <PanelWrapper>
-              <Panel style={{ gridColumn: '1' }}>
-                {activePosition ? (
-                  <PairReturnsChart account={account} position={activePosition} />
-                ) : (
-                  <UserChart account={account} position={activePosition} />
-                )}
-              </Panel>
-            </PanelWrapper>
-          )}
           <TYPE.main fontSize={'1.125rem'} style={{ marginTop: '3rem' }}>
             Positions
           </TYPE.main>{' '}
@@ -310,31 +267,7 @@ function AccountPage({ account }) {
           >
             <TxnList transactions={transactions} />
           </Panel>
-          <TYPE.main fontSize={'1.125rem'} style={{ marginTop: '3rem' }}>
-            Wallet Stats
-          </TYPE.main>{' '}
-          <Panel
-            style={{
-              marginTop: '1.5rem'
-            }}
-          >
-            <AutoRow gap="20px">
-              <AutoColumn gap="8px">
-                <TYPE.header fontSize={24}>{totalSwappedUSD ? formattedNum(totalSwappedUSD, true) : '-'}</TYPE.header>
-                <TYPE.main>Total Value Swapped</TYPE.main>
-              </AutoColumn>
-              <AutoColumn gap="8px">
-                <TYPE.header fontSize={24}>
-                  {totalSwappedUSD ? formattedNum(totalSwappedUSD * 0.003, true) : '-'}
-                </TYPE.header>
-                <TYPE.main>Total Fees Paid</TYPE.main>
-              </AutoColumn>
-              <AutoColumn gap="8px">
-                <TYPE.header fontSize={24}>{transactionCount ? transactionCount : '-'}</TYPE.header>
-                <TYPE.main>Total Transactions</TYPE.main>
-              </AutoColumn>
-            </AutoRow>
-          </Panel>
+
         </DashboardWrapper>
       </ContentWrapper>
     </PageWrapper>
