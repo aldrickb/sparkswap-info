@@ -1,32 +1,45 @@
 import React from 'react'
-import Lottie from 'react-lottie'
-import styled from 'styled-components'
-import beeAnimation from '../../assets/lotties/bee-animation.json'
+import styled, { css, keyframes } from 'styled-components'
 
+const pulse = keyframes`
+  0% { transform: scale(1); }
+  60% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+`
 
-const Loader = styled.div`
+const Wrapper = styled.div`
   pointer-events: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: ${props => props.fill ? '100vh': '180px'};
+  height: 100%;
   width: 100%;
+
+  ${(props) =>
+    props.fill && !props.height
+      ? css`
+          height: 100vh;
+        `
+      : css`
+          height: 180px;
+        `}
+`
+
+const AnimatedImg = styled.div`
+  animation: ${pulse} 800ms linear infinite;
+  & > * {
+    width: 72px;
+  }
 `
 
 const LocalLoader = ({ fill }) => {
-  const defaultOptions = {
-    animationData: beeAnimation,
-  };
-
-return (
- <Loader fill={fill}>
-    <Lottie 
-      options={defaultOptions}
-      height={fill ? 100 : 84}
-      width={fill ? 100 : 84}
-    />
-  </Loader>
-);
+  return (
+    <Wrapper fill={fill}>
+      <AnimatedImg>
+        <img src={require('../../assets/logo_sqaure.png')} alt="loading-icon" />
+      </AnimatedImg>
+    </Wrapper>
+  )
 }
 
 export default LocalLoader
