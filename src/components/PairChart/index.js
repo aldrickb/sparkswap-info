@@ -39,7 +39,7 @@ const CHART_VIEW = {
 }
 
 const PairChart = ({ address, color, base0, base1 }) => {
-  const [chartFilter, setChartFilter] = useState(CHART_VIEW.LIQUIDITY)
+  const [chartFilter, setChartFilter] = useState(CHART_VIEW.RATE0)
 
   const [timeWindow, setTimeWindow] = useState(timeframeOptions.MONTH)
 
@@ -123,24 +123,6 @@ const PairChart = ({ address, color, base0, base1 }) => {
       ) : (
         <OptionsRow>
           <AutoRow gap="6px" style={{ flexWrap: 'nowrap' }}>
-            <OptionButton
-              active={chartFilter === CHART_VIEW.LIQUIDITY}
-              onClick={() => {
-                setTimeWindow(timeframeOptions.ALL_TIME)
-                setChartFilter(CHART_VIEW.LIQUIDITY)
-              }}
-            >
-              Liquidity
-            </OptionButton>
-            <OptionButton
-              active={chartFilter === CHART_VIEW.VOLUME}
-              onClick={() => {
-                setTimeWindow(timeframeOptions.ALL_TIME)
-                setChartFilter(CHART_VIEW.VOLUME)
-              }}
-            >
-              Volume
-            </OptionButton>
             <OptionButton
               active={chartFilter === CHART_VIEW.RATE0}
               onClick={() => {

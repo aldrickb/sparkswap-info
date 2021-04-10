@@ -313,49 +313,6 @@ function PairPage({ pairAddress, history }) {
                 <Panel style={{ height: '100%' }}>
                   <AutoColumn gap="20px">
                     <RowBetween>
-                      <TYPE.main>Total Liquidity {!usingTracked ? '(Untracked)' : ''}</TYPE.main>
-                      <div />
-                    </RowBetween>
-                    <RowBetween align="flex-end">
-                      <TYPE.main fontSize={'1.5rem'} lineHeight={1} fontWeight={500}>
-                        {liquidity}
-                      </TYPE.main>
-                      <TYPE.main>{liquidityChange}</TYPE.main>
-                    </RowBetween>
-                  </AutoColumn>
-                </Panel>
-                <Panel style={{ height: '100%' }}>
-                  <AutoColumn gap="20px">
-                    <RowBetween>
-                      <TYPE.main>Volume (24hrs) {usingUtVolume && '(Untracked)'}</TYPE.main>
-                      <div />
-                    </RowBetween>
-                    <RowBetween align="flex-end">
-                      <TYPE.main fontSize={'1.5rem'} lineHeight={1} fontWeight={500}>
-                        {volume}
-                      </TYPE.main>
-                      <TYPE.main>{volumeChange}</TYPE.main>
-                    </RowBetween>
-                  </AutoColumn>
-                </Panel>
-                <Panel style={{ height: '100%' }}>
-                  <AutoColumn gap="20px">
-                    <RowBetween>
-                      <TYPE.main>Fees (24hrs)</TYPE.main>
-                      <div />
-                    </RowBetween>
-                    <RowBetween align="flex-end">
-                      <TYPE.main fontSize={'1.5rem'} lineHeight={1} fontWeight={500}>
-                        {fees}
-                      </TYPE.main>
-                      <TYPE.main>{volumeChange}</TYPE.main>
-                    </RowBetween>
-                  </AutoColumn>
-                </Panel>
-
-                <Panel style={{ height: '100%' }}>
-                  <AutoColumn gap="20px">
-                    <RowBetween>
                       <TYPE.main>Pooled Tokens</TYPE.main>
                       <div />
                     </RowBetween>
