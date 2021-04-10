@@ -294,9 +294,6 @@ function TxnList({ transactions, symbol0Override, symbol1Override, color }) {
             {getTransactionType(item.type, item.token1Symbol, item.token0Symbol)}
           </Link>
         </DataText>
-        <DataText area="value">
-          {currency === 'ETH' ? 'Ξ ' + formattedNum(item.valueETH) : formattedNum(item.amountUSD, true)}
-        </DataText>
         {!below780 && (
           <>
             <DataText area="amountOther">
@@ -365,18 +362,6 @@ function TxnList({ transactions, symbol0Override, symbol1Override, color }) {
           </RowFixed>
         )}
 
-        <Flex alignItems="center" justifyContent="flexStart">
-          <ClickableText
-            color="textDim"
-            area="value"
-            onClick={e => {
-              setSortedColumn(SORT_FIELD.VALUE)
-              setSortDirection(sortedColumn !== SORT_FIELD.VALUE ? true : !sortDirection)
-            }}
-          >
-            Total Value {sortedColumn === SORT_FIELD.VALUE ? (!sortDirection ? '↑' : '↓') : ''}
-          </ClickableText>
-        </Flex>
         {!below780 && (
           <Flex alignItems="center">
             <ClickableText
