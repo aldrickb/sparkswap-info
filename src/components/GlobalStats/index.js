@@ -47,8 +47,7 @@ export default function GlobalStats() {
               }}
               style={{ position: 'relative' }}
             >
-              xDai Price: <Medium>{formattedEthPrice}</Medium>
-              {showPriceCard && <UniPrice />}
+              BNB Price: <Medium>{formattedEthPrice}</Medium>
             </TYPE.main>
           )}
 
