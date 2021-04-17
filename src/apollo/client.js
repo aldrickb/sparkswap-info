@@ -4,9 +4,10 @@ import { HttpLink } from 'apollo-link-http'
 
 export const client = new ApolloClient({
   link: new HttpLink({
-    uri: 'https://api.thegraph.com/subgraphs/name/aldrickb/sparkswapv2'
+    uri: 'https://api.thegraph.com/subgraphs/name/aldrickb/test2sparksubgraphv2'
   }),
   cache: new InMemoryCache(),
+  fetchPolicy: "no-cache",
   shouldBatch: true
 })
 
@@ -15,20 +16,14 @@ export const healthClient = new ApolloClient({
     uri: 'https://api.thegraph.com/index-node/graphql'
   }),
   cache: new InMemoryCache(),
-  shouldBatch: true
-})
-
-export const v1Client = new ApolloClient({
-  link: new HttpLink({
-    uri: 'https://api.thegraph.com/subgraphs/name/aldrickb/sparkswap'
-  }),
-  cache: new InMemoryCache(),
+  fetchPolicy: "no-cache",
   shouldBatch: true
 })
 
 export const blockClient = new ApolloClient({
   link: new HttpLink({
-    uri: 'https://api.thegraph.com/subgraphs/name/pancakeswap/blocks'
+    uri: 'https://api.thegraph.com/subgraphs/name/aldrickb/test2sparkblock'
   }),
-  cache: new InMemoryCache()
+  cache: new InMemoryCache(),
+  fetchPolicy: "no-cache",
 })
