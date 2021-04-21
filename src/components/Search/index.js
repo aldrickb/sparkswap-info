@@ -36,11 +36,11 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: flex-end;
   padding: 12px 16px;
-  border-radius: 12px;
+  // border-radius: 12px;
   background: ${({ theme, small, open }) =>
-    small ? (open ? transparentize(0.4, theme.bg1) : 'none') : transparentize(0.4, theme.bg6)};
-  border-bottom-right-radius: ${({ open }) => (open ? '0px' : '12px')};
-  border-bottom-left-radius: ${({ open }) => (open ? '0px' : '12px')};
+    small ? (open ? transparentize(0.4, theme.search) : 'none') : transparentize(0.4, theme.search)};
+  // border-bottom-right-radius: ${({ open }) => (open ? '0px' : '12px')};
+  // border-bottom-left-radius: ${({ open }) => (open ? '0px' : '12px')};
   z-index: 9999;
   width: 100%;
   min-width: 300px;
@@ -113,9 +113,9 @@ const Menu = styled.div`
   overflow: scroll;
   left: 0;
   padding-bottom: 20px;
-  background: ${({ theme }) => theme.bg6};
-  border-bottom-right-radius: 12px;
-  border-bottom-left-radius: 12px;
+  background: ${({ theme }) => theme.searchMenu};
+  // border-bottom-right-radius: 12px;
+  // border-bottom-left-radius: 12px;
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04),
     0px 24px 32px rgba(0, 0, 0, 0.04);
   display: ${({ hide }) => hide && 'none'};

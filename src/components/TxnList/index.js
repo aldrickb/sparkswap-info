@@ -436,7 +436,7 @@ function TxnList({ transactions, symbol0Override, symbol1Override, color }) {
         ) : (
           filteredList.map((item, index) => {
             return (
-              <div key={index}>
+              <div key={index} style={{borderBottom: '1px solid #1B60A3'}}>
                 <ListItem key={index} index={index + 1} item={item} />
                 <Divider />
               </div>

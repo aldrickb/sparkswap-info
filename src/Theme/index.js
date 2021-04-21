@@ -34,17 +34,18 @@ const theme = (darkMode, color) => ({
   white: '#FFFFFF',
 
   // backgrounds / greys
-  bg1: darkMode ? '#212429' : '#FAFAFA',
-  bg2: darkMode ? '#2C2F36' : '#F7F8FA',
-  bg3: darkMode ? '#40444F' : '#EDEEF2',
-  bg4: darkMode ? '#565A69' : '#CED0D9',
+  bg1: darkMode ? '#00071E' : '#FAFAFA',
+  bg2: darkMode ? '#2C2F36' : '#F7F8FA', //Icon BG Color
+  bg3: darkMode ? '#1B60A3' : '#EDEEF2', //Border Colors
+  bg4: darkMode ? '#565A69' : '#CED0D9', //Graph icon bg color ( D/W )
   bg5: darkMode ? '#565A69' : '#888D9B',
-  bg6: darkMode ? '#000' : '#FFFFFF',
-
+  bg6: darkMode ? '#00071E' : '#FFFFFF', //Loading BG Color
+  search: darkMode? '#1C304A': '#FFFFFF',
+  searchMenu: darkMode? '#111122': '#FFFFFF',
   //specialty colors
   modalBG: darkMode ? 'rgba(0,0,0,0.85)' : 'rgba(0,0,0,0.6)',
-  advancedBG: darkMode ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.4)',
-  onlyLight: darkMode ? '#22242a' : 'transparent',
+  advancedBG: darkMode ? '#1C304A' : 'rgba(255,255,255,0.4)', //Color of the graphs
+  onlyLight: darkMode ? '#00071E' : 'transparent', //background color main
   divider: darkMode ? 'rgba(43, 43, 43, 0.435)' : 'rgba(43, 43, 43, 0.035)',
 
   //primary colors
