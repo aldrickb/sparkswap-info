@@ -34,9 +34,9 @@ const Input = styled.input`
   border: none;
   outline: none;
   padding: 12px 16px;
-  border-radius: 12px;
+  // border-radius: 12px;
   color: ${({ theme }) => theme.text1};
-  background-color: ${({ theme }) => theme.bg1};
+  background-color: ${({ theme }) => theme.search};
   font-size: 16px;
   margin-right: 1rem;
   border: 1px solid ${({ theme }) => theme.bg3};

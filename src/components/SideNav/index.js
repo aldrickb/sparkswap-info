@@ -23,7 +23,8 @@ const Wrapper = styled.div`
   z-index: 9999;
   box-sizing: border-box;
   /* background-color: #1b1c22; */
-  background: linear-gradient(193.68deg, #1b1c22 0.68%, #000000 100.48%);
+  // background: linear-gradient(193.68deg, #1b1c22 0.68%, #000000 100.48%);
+  background: #111122;
   color: ${({ theme }) => theme.bg2};
 
   @media screen and (max-width: 800px) {
@@ -162,9 +163,9 @@ function SideNav({ history }) {
               </AutoColumn>
             )}
           </AutoColumn>
-          <AutoColumn gap="0.5rem" style={{ marginLeft: '.75rem', marginBottom: '4rem' }}>
+          {/* <AutoColumn gap="0.5rem" style={{ marginLeft: '.75rem', marginBottom: '4rem' }}>
             <Toggle isActive={isDark} toggle={toggleDarkMode} />
-          </AutoColumn>
+          </AutoColumn> */}
           {!below1180 && (
             <Polling style={{ marginLeft: '.5rem' }}>
               <PollingDot />

@@ -299,7 +299,7 @@ function TopTokenList({ tokens, itemMax = 10 }) {
         {filteredList &&
           filteredList.map((item, index) => {
             return (
-              <div key={index}>
+              <div key={index} style={{borderBottom: '1px solid #1B60A3'}}>
                 <ListItem key={index} index={(page - 1) * itemMax + index + 1} item={item} />
                 <Divider />
               </div>
