@@ -136,7 +136,7 @@ function LPList({ lps, disbaleLinks, maxItems = 10 }) {
     lps &&
     lps.slice(ITEMS_PER_PAGE * (page - 1), page * ITEMS_PER_PAGE).map((lp, index) => {
       return (
-        <div key={index}>
+        <div key={index} style={{borderBottom: '1px solid #1B60A3'}}>
           <ListItem key={index} index={(page - 1) * 10 + index + 1} lp={lp} />
           <Divider />
         </div>
