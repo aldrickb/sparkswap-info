@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.js": "/static/js/main.d8973ff8.chunk.js",
-    "main.js.map": "/static/js/main.d8973ff8.chunk.js.map",
+    "main.js": "/static/js/main.a72c2907.chunk.js",
+    "main.js.map": "/static/js/main.a72c2907.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.601f50a1.js",
     "runtime-main.js.map": "/static/js/runtime-main.601f50a1.js.map",
-    "static/js/2.7faee813.chunk.js": "/static/js/2.7faee813.chunk.js",
-    "static/js/2.7faee813.chunk.js.map": "/static/js/2.7faee813.chunk.js.map",
+    "static/js/2.2feb80b6.chunk.js": "/static/js/2.2feb80b6.chunk.js",
+    "static/js/2.2feb80b6.chunk.js.map": "/static/js/2.2feb80b6.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.e405c9eb1883387505a36d55efadd98b.js": "/precache-manifest.e405c9eb1883387505a36d55efadd98b.js",
+    "precache-manifest.8572aa30d43be6b62209be1079daf9ff.js": "/precache-manifest.8572aa30d43be6b62209be1079daf9ff.js",
     "service-worker.js": "/service-worker.js",
-    "static/js/2.7faee813.chunk.js.LICENSE.txt": "/static/js/2.7faee813.chunk.js.LICENSE.txt",
-    "static/media/SparkDeFi_wordmark.svg": "/static/media/SparkDeFi_wordmark.f831f6b4.svg",
+    "static/js/2.2feb80b6.chunk.js.LICENSE.txt": "/static/js/2.2feb80b6.chunk.js.LICENSE.txt",
+    "static/media/SRK.png": "/static/media/SRK.4cfa15c8.png",
+    "static/media/SparkDeFi_wordmark.svg": "/static/media/SparkDeFi_wordmark.06d5ee92.svg",
     "static/media/eth.png": "/static/media/eth.73dabb37.png",
     "static/media/logo_sqaure.png": "/static/media/logo_sqaure.63539be0.png"
   },
   "entrypoints": [
     "static/js/runtime-main.601f50a1.js",
-    "static/js/2.7faee813.chunk.js",
-    "static/js/main.d8973ff8.chunk.js"
+    "static/js/2.2feb80b6.chunk.js",
+    "static/js/main.a72c2907.chunk.js"
   ]
 }
