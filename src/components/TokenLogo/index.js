@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import { isAddress } from '../../utils/index.js'
 import PlaceHolder from '../../assets/placeholder.png'
 import EthereumLogo from '../../assets/eth.png'
+import SRKLogo from '../../assets/SRK.png'
 import { useListedTokensMap } from '../../contexts/Application'
 
 const BAD_IMAGES = {}
@@ -33,11 +35,10 @@ const StyledEthereumLogo = styled.div`
 
 export default function TokenLogo({ address, header = false, size = '24px', ...rest }) {
   const [error, setError] = useState(false)
-  const listedTokensMap = useListedTokensMap()
 
   useEffect(() => {
     setError(false)
-  }, [address, listedTokensMap])
+  }, [address])
 
   if (error || BAD_IMAGES[address]) {
     return (
@@ -61,17 +62,49 @@ export default function TokenLogo({ address, header = false, size = '24px', ...r
       <StyledEthereumLogo size={size} {...rest}>
         <img
           src={EthereumLogo}
-          style={{ boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)', borderRadius: '24px' }}
+          style={{
+            boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)',
+            borderRadius: '24px',
+          }}
           alt=""
         />
       </StyledEthereumLogo>
     )
   }
 
-  const path = listedTokensMap[address]?.logoURI
-  if (!path) {
-    setError(true)
+  if (address?.toLowerCase() === '0xc3440c10c4f36f354eb591b19fafb4906d449b75') { // SRKb
+    return (
+      <StyledEthereumLogo size={size} {...rest}>
+        <img
+          src={SRKLogo}
+          style={{
+            boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)',
+            borderRadius: '24px',
+          }}
+          alt=""
+        />
+      </StyledEthereumLogo>
+    )
   }
+
+  if (address?.toLowerCase() === '0x14b1166ab53a237c8ceaee2bbc4bbca200cb7da8') {
+    return (
+      <StyledEthereumLogo size={size} {...rest}>
+        <img
+          src={SRKLogo}
+          style={{
+            boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)',
+            borderRadius: '24px',
+          }}
+          alt=""
+        />
+      </StyledEthereumLogo>
+    )
+  }
+
+  const path = `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/${isAddress(
+    address
+  )}/logo.png`
 
   return (
     <Inline>
@@ -80,7 +113,7 @@ export default function TokenLogo({ address, header = false, size = '24px', ...r
         alt={''}
         src={path}
         size={size}
-        onError={event => {
+        onError={(event) => {
           BAD_IMAGES[address] = true
           setError(true)
           event.preventDefault()
