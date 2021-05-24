@@ -7,7 +7,7 @@ import { useMedia } from 'react-use'
 import { transparentize } from 'polished'
 import { TYPE } from '../../Theme'
 import { withRouter } from 'react-router-dom'
-import { TrendingUp, List, PieChart, Disc } from 'react-feather'
+import { TrendingUp, List, PieChart, Disc, Home } from 'react-feather'
 import Link from '../Link'
 import { useSessionStart } from '../../contexts/Application'
 import { useDarkModeManager } from '../../contexts/LocalStorage'
@@ -163,9 +163,14 @@ function SideNav({ history }) {
               </AutoColumn>
             )}
           </AutoColumn>
-          {/* <AutoColumn gap="0.5rem" style={{ marginLeft: '.75rem', marginBottom: '4rem' }}>
-            <Toggle isActive={isDark} toggle={toggleDarkMode} />
-          </AutoColumn> */}
+          <AutoColumn gap="0.5rem" style={{ marginLeft: '.75rem', marginBottom: '4rem' }}>
+            <a href="https://app.srk.finance/#/">
+              <Option>
+                <Home size={20} style={{ marginRight: '.75rem' }} />
+                Home
+              </Option>
+            </a>
+          </AutoColumn>
           {!below1180 && (
             <Polling style={{ marginLeft: '.5rem' }}>
               <PollingDot />
