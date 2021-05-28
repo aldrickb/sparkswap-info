@@ -122,7 +122,7 @@ const SORT_FIELD = {
 }
 
 // @TODO rework into virtualized list
-function TopTokenList({ tokens, itemMax = 10 }) {
+function TopTokenList({ tokens, itemMax = 10, useTracked = false }) {
   // page state
   const [page, setPage] = useState(1)
   const [maxPage, setMaxPage] = useState(1)
@@ -135,8 +135,6 @@ function TopTokenList({ tokens, itemMax = 10 }) {
   const below680 = useMedia('(max-width: 680px)')
   const below600 = useMedia('(max-width: 600px)')
 
-  const listedTokensMap = useListedTokensMap();
-
   useEffect(() => {
     setMaxPage(1) // edit this to do modular
     setPage(1)
@@ -146,10 +144,10 @@ function TopTokenList({ tokens, itemMax = 10 }) {
     return (
       tokens &&
       Object.keys(tokens)
-        .filter(key => {
-          return !OVERVIEW_TOKEN_BLACKLIST.includes(key) && listedTokensMap[key]
+        .filter((key) => {
+          return !OVERVIEW_TOKEN_BLACKLIST.includes(key)
         })
-        .map(key => tokens[key])
+        .map((key) => tokens[key])
     )
   }, [tokens])
 
@@ -221,9 +219,9 @@ function TopTokenList({ tokens, itemMax = 10 }) {
             color="text"
             area="name"
             fontWeight="500"
-            onClick={e => {
+            onClick={(e) => {
               setSortedColumn(SORT_FIELD.NAME)
-              setSortDirection(sortedColumn !== SORT_FIELD.NAMe ? true : !sortDirection)
+              setSortDirection(sortedColumn !== SORT_FIELD.NAME ? true : !sortDirection)
             }}
           >
             {below680 ? 'Symbol' : 'Name'} {sortedColumn === SORT_FIELD.NAME ? (!sortDirection ? '↑' : '↓') : ''}
@@ -233,7 +231,7 @@ function TopTokenList({ tokens, itemMax = 10 }) {
           <Flex alignItems="center">
             <ClickableText
               area="symbol"
-              onClick={e => {
+              onClick={() => {
                 setSortedColumn(SORT_FIELD.SYMBOL)
                 setSortDirection(sortedColumn !== SORT_FIELD.SYMBOL ? true : !sortDirection)
               }}
@@ -246,7 +244,7 @@ function TopTokenList({ tokens, itemMax = 10 }) {
         <Flex alignItems="center">
           <ClickableText
             area="liq"
-            onClick={e => {
+            onClick={(e) => {
               setSortedColumn(SORT_FIELD.LIQ)
               setSortDirection(sortedColumn !== SORT_FIELD.LIQ ? true : !sortDirection)
             }}
@@ -257,20 +255,22 @@ function TopTokenList({ tokens, itemMax = 10 }) {
         <Flex alignItems="center">
           <ClickableText
             area="vol"
-            onClick={e => {
-              setSortedColumn(SORT_FIELD.VOL)
-              setSortDirection(sortedColumn !== SORT_FIELD.VOL ? true : !sortDirection)
+            onClick={() => {
+              setSortedColumn(useTracked ? SORT_FIELD.VOL_UT : SORT_FIELD.VOL)
+              setSortDirection(
+                sortedColumn !== (useTracked ? SORT_FIELD.VOL_UT : SORT_FIELD.VOL) ? true : !sortDirection
+              )
             }}
           >
             Volume (24hrs)
-            {sortedColumn === SORT_FIELD.VOL ? (!sortDirection ? '↑' : '↓') : ''}
+            {sortedColumn === (useTracked ? SORT_FIELD.VOL_UT : SORT_FIELD.VOL) ? (!sortDirection ? '↑' : '↓') : ''}
           </ClickableText>
         </Flex>
         {!below1080 && (
           <Flex alignItems="center">
             <ClickableText
               area="price"
-              onClick={e => {
+              onClick={(e) => {
                 setSortedColumn(SORT_FIELD.PRICE)
                 setSortDirection(sortedColumn !== SORT_FIELD.PRICE ? true : !sortDirection)
               }}
@@ -283,7 +283,7 @@ function TopTokenList({ tokens, itemMax = 10 }) {
           <Flex alignItems="center">
             <ClickableText
               area="change"
-              onClick={e => {
+              onClick={(e) => {
                 setSortedColumn(SORT_FIELD.CHANGE)
                 setSortDirection(sortedColumn !== SORT_FIELD.CHANGE ? true : !sortDirection)
               }}
@@ -299,7 +299,7 @@ function TopTokenList({ tokens, itemMax = 10 }) {
         {filteredList &&
           filteredList.map((item, index) => {
             return (
-              <div key={index} style={{borderBottom: '1px solid #1B60A3'}}>
+              <div key={index} style={{ borderBottom: '1px solid #1B60A3' }}>
                 <ListItem key={index} index={(page - 1) * itemMax + index + 1} item={item} />
                 <Divider />
               </div>
