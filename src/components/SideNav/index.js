@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { AutoColumn } from '../Column'
 import Title from '../Title'
@@ -7,11 +7,12 @@ import { useMedia } from 'react-use'
 import { transparentize } from 'polished'
 import { TYPE } from '../../Theme'
 import { withRouter } from 'react-router-dom'
-import { TrendingUp, List, PieChart, Disc, Home } from 'react-feather'
+import { TrendingUp, List, PieChart, Disc, Home, Twitter, Menu } from 'react-feather'
 import Link from '../Link'
 import { useSessionStart } from '../../contexts/Application'
 import { useDarkModeManager } from '../../contexts/LocalStorage'
 import Toggle from '../Toggle'
+import { AutoRow } from '../Row'
 
 const Wrapper = styled.div`
   height: ${({ isMobile }) => (isMobile ? 'initial' : '100vh')};
@@ -59,6 +60,11 @@ const MobileWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px;
+
+  @media (max-width: 450px) {
+    flex-direction: column;
+  }
 `
 
 const HeaderText = styled.div`
@@ -73,6 +79,16 @@ const HeaderText = styled.div`
   }
   a {
     color: ${({ theme }) => theme.white};
+  }
+`
+
+const MenuLinks = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  @media (max-width: 500px) {
+    flex-direction: column;
+    align-items: center;
   }
 `
 
@@ -102,12 +118,14 @@ const PollingDot = styled.div`
 
 function SideNav({ history }) {
   const below1080 = useMedia('(max-width: 1080px)')
-
+  const below500 = useMedia('(max-width: 500px)')
   const below1180 = useMedia('(max-width: 1180px)')
-
+  const below1025 = useMedia('(max-width: 1025px)')
+  const above500 = useMedia('(min-width: 500px)')
   const seconds = useSessionStart()
 
   const [isDark, toggleDarkMode] = useDarkModeManager()
+  const [show, setShow] = useState(false)
 
   return (
     <Wrapper isMobile={below1080}>
@@ -170,6 +188,12 @@ function SideNav({ history }) {
                 Home
               </Option>
             </a>
+            <a href="https://twitter.com/sparkpointio">
+              <Option>
+                <Twitter size={20} style={{ marginRight: '.75rem' }} />
+                @SparkDefi
+              </Option>
+            </a>
           </AutoColumn>
           {!below1180 && (
             <Polling style={{ marginLeft: '.5rem' }}>
@@ -184,7 +208,101 @@ function SideNav({ history }) {
         </DesktopWrapper>
       ) : (
         <MobileWrapper>
-          <Title />
+          <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+            <Title />
+            {below500 && (
+              <button onClick={() => setShow(!show)} style={{ background: 'transparent', border: 'none' }}>
+                {' '}
+                <Menu color="white" />{' '}
+              </button>
+            )}
+          </div>
+          {below500 && show && (
+            <MenuLinks>
+              <BasicLink to="/home">
+                <Option activeText={history.location.pathname === '/home' ?? undefined}>Overview</Option>
+              </BasicLink>
+              <BasicLink to="/tokens">
+                <Option
+                  activeText={
+                    (history.location.pathname.split('/')[1] === 'tokens' ||
+                      history.location.pathname.split('/')[1] === 'token') ??
+                    undefined
+                  }
+                >
+                  Tokens
+                </Option>
+              </BasicLink>
+              <BasicLink to="/pairs">
+                <Option
+                  activeText={
+                    (history.location.pathname.split('/')[1] === 'pairs' ||
+                      history.location.pathname.split('/')[1] === 'pair') ??
+                    undefined
+                  }
+                >
+                  Pairs
+                </Option>
+              </BasicLink>
+              <BasicLink to="/accounts">
+                <Option
+                  activeText={
+                    (history.location.pathname.split('/')[1] === 'accounts' ||
+                      history.location.pathname.split('/')[1] === 'account') ??
+                    undefined
+                  }
+                >
+                  Accounts
+                </Option>
+              </BasicLink>
+              <a href="https://app.srk.finance/#/">
+                <Option>SparkDefi</Option>
+              </a>
+            </MenuLinks>
+          )}
+          {below1025 && above500 && (
+            <MenuLinks>
+              <BasicLink to="/home">
+                <Option activeText={history.location.pathname === '/home' ?? undefined}>Overview</Option>
+              </BasicLink>
+              <BasicLink to="/tokens">
+                <Option
+                  activeText={
+                    (history.location.pathname.split('/')[1] === 'tokens' ||
+                      history.location.pathname.split('/')[1] === 'token') ??
+                    undefined
+                  }
+                >
+                  Tokens
+                </Option>
+              </BasicLink>
+              <BasicLink to="/pairs">
+                <Option
+                  activeText={
+                    (history.location.pathname.split('/')[1] === 'pairs' ||
+                      history.location.pathname.split('/')[1] === 'pair') ??
+                    undefined
+                  }
+                >
+                  Pairs
+                </Option>
+              </BasicLink>
+              <BasicLink to="/accounts">
+                <Option
+                  activeText={
+                    (history.location.pathname.split('/')[1] === 'accounts' ||
+                      history.location.pathname.split('/')[1] === 'account') ??
+                    undefined
+                  }
+                >
+                  Accounts
+                </Option>
+              </BasicLink>
+              <a href="https://app.srk.finance/#/">
+                <Option>SparkDeFi</Option>
+              </a>
+            </MenuLinks>
+          )}
         </MobileWrapper>
       )}
     </Wrapper>
