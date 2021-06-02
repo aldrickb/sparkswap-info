@@ -200,7 +200,7 @@ function SideNav({ history }) {
             <a href="https://twitter.com/sparkpointio" style={{ marginBottom: '10px' }}>
               <Option>
                 <Twitter size={20} style={{ marginRight: '.75rem' }} />
-                SparkDefi
+                SparkDeFi
               </Option>
             </a>
 
