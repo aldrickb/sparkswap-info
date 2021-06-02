@@ -118,7 +118,7 @@ const PollingDot = styled.div`
 `
 
 const PoweredLogo = () => (
-  <div style={{ display: 'flex', marginLeft: '2rem', width: '60%' }}>
+  <div style={{ display: 'flex', marginLeft: '2rem', width: '60%', marginBottom: '5px' }}>
     <img src={Powered} alt="poweredLogo" />
   </div>
 )
