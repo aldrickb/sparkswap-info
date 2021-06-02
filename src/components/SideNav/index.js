@@ -118,7 +118,7 @@ const PollingDot = styled.div`
 `
 
 const PoweredLogo = () => (
-  <div style={{ display: 'flex', marginLeft: '1rem', width: '60%' }}>
+  <div style={{ display: 'flex', marginLeft: '2rem', width: '60%' }}>
     <img src={Powered} alt="poweredLogo" />
   </div>
 )
@@ -205,7 +205,7 @@ function SideNav({ history }) {
             </a>
 
             {!below1180 && (
-              <Polling style={{ marginLeft: '.5rem' }}>
+              <Polling>
                 <PollingDot />
                 <a href="/" style={{ color: 'white' }}>
                   <TYPE.small color={'white'}>
