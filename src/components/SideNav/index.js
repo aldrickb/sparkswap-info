@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { AutoColumn } from '../Column'
 import Title from '../Title'
+import Powered from './Desktop.svg'
 import { BasicLink } from '../Link'
 import { useMedia } from 'react-use'
 import { transparentize } from 'polished'
@@ -93,11 +94,11 @@ const MenuLinks = styled.div`
 `
 
 const Polling = styled.div`
-  position: fixed;
+  // position: fixed;
   display: flex;
-  left: 0;
-  bottom: 0;
-  padding: 1rem;
+  // left: 0;
+  // bottom: 0;
+  padding: 1rem 0px 1rem 0px;
   color: white;
   opacity: 0.4;
   transition: opacity 0.25s ease;
@@ -115,6 +116,12 @@ const PollingDot = styled.div`
   border-radius: 50%;
   background-color: ${({ theme }) => theme.green1};
 `
+
+const PoweredLogo = () => (
+  <div style={{ display: 'flex', marginLeft: '1rem', width: '60%' }}>
+    <img src={Powered} alt="poweredLogo" />
+  </div>
+)
 
 function SideNav({ history }) {
   const below1080 = useMedia('(max-width: 1080px)')
@@ -181,30 +188,34 @@ function SideNav({ history }) {
               </AutoColumn>
             )}
           </AutoColumn>
-          <AutoColumn gap="0.5rem" style={{ marginLeft: '.75rem', marginBottom: '4rem' }}>
-            <a href="https://app.srk.finance/#/">
+          <AutoColumn
+            style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', padding: '10px' }}
+          >
+            <a href="https://app.srk.finance/#/" style={{ marginBottom: '10px' }}>
               <Option>
                 <Home size={20} style={{ marginRight: '.75rem' }} />
                 Home
               </Option>
             </a>
-            <a href="https://twitter.com/sparkpointio">
+            <a href="https://twitter.com/sparkpointio" style={{ marginBottom: '10px' }}>
               <Option>
                 <Twitter size={20} style={{ marginRight: '.75rem' }} />
-                @SparkDefi
+                SparkDefi
               </Option>
             </a>
+
+            {!below1180 && (
+              <Polling style={{ marginLeft: '.5rem' }}>
+                <PollingDot />
+                <a href="/" style={{ color: 'white' }}>
+                  <TYPE.small color={'white'}>
+                    Updated {!!seconds ? seconds + 's' : '-'} ago <br />
+                  </TYPE.small>
+                </a>
+              </Polling>
+            )}
+            <PoweredLogo />
           </AutoColumn>
-          {!below1180 && (
-            <Polling style={{ marginLeft: '.5rem' }}>
-              <PollingDot />
-              <a href="/" style={{ color: 'white' }}>
-                <TYPE.small color={'white'}>
-                  Updated {!!seconds ? seconds + 's' : '-'} ago <br />
-                </TYPE.small>
-              </a>
-            </Polling>
-          )}
         </DesktopWrapper>
       ) : (
         <MobileWrapper>
