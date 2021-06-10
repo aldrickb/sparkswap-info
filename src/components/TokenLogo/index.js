@@ -4,6 +4,7 @@ import { isAddress } from '../../utils/index.js'
 import PlaceHolder from '../../assets/placeholder.png'
 import EthereumLogo from '../../assets/eth.png'
 import SRKLogo from '../../assets/SRK.png'
+import BCPLogo from '../../assets/bitcashpay.png'
 import { useListedTokensMap } from '../../contexts/Application'
 
 const BAD_IMAGES = {}
@@ -87,6 +88,7 @@ export default function TokenLogo({ address, header = false, size = '24px', ...r
     )
   }
 
+
   if (address?.toLowerCase() === '0x14b1166ab53a237c8ceaee2bbc4bbca200cb7da8') {
     return (
       <StyledEthereumLogo size={size} {...rest}>
@@ -101,6 +103,23 @@ export default function TokenLogo({ address, header = false, size = '24px', ...r
       </StyledEthereumLogo>
     )
   }
+
+  
+  if (address?.toLowerCase() === '0xb44a9b6905af7c801311e8f4e76932ee959c663c') { // BCP
+    return (
+      <StyledEthereumLogo size={size} {...rest}>
+        <img
+          src={BCPLogo}
+          style={{
+            boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)',
+            borderRadius: '24px',
+          }}
+          alt=""
+        />
+      </StyledEthereumLogo>
+    )
+  }
+
 
   const path = `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/${isAddress(
     address
