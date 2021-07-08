@@ -5,6 +5,8 @@ import PlaceHolder from '../../assets/placeholder.png'
 import EthereumLogo from '../../assets/eth.png'
 import SRKLogo from '../../assets/SRK.png'
 import BCPLogo from '../../assets/bitcashpay.png'
+import FiGLogo from '../../assets/FiG.png'
+import KiwigoLogo from '../../assets/Kiwigo.png'
 import { useListedTokensMap } from '../../contexts/Application'
 
 const BAD_IMAGES = {}
@@ -65,7 +67,7 @@ export default function TokenLogo({ address, header = false, size = '24px', ...r
           src={EthereumLogo}
           style={{
             boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)',
-            borderRadius: '24px',
+            borderRadius: '24px'
           }}
           alt=""
         />
@@ -73,21 +75,21 @@ export default function TokenLogo({ address, header = false, size = '24px', ...r
     )
   }
 
-  if (address?.toLowerCase() === '0xc3440c10c4f36f354eb591b19fafb4906d449b75') { // SRKb
+  if (address?.toLowerCase() === '0xc3440c10c4f36f354eb591b19fafb4906d449b75') {
+    // SRKb
     return (
       <StyledEthereumLogo size={size} {...rest}>
         <img
           src={SRKLogo}
           style={{
             boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)',
-            borderRadius: '24px',
+            borderRadius: '24px'
           }}
           alt=""
         />
       </StyledEthereumLogo>
     )
   }
-
 
   if (address?.toLowerCase() === '0x14b1166ab53a237c8ceaee2bbc4bbca200cb7da8') {
     return (
@@ -96,7 +98,7 @@ export default function TokenLogo({ address, header = false, size = '24px', ...r
           src={SRKLogo}
           style={{
             boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)',
-            borderRadius: '24px',
+            borderRadius: '24px'
           }}
           alt=""
         />
@@ -104,15 +106,15 @@ export default function TokenLogo({ address, header = false, size = '24px', ...r
     )
   }
 
-  
-  if (address?.toLowerCase() === '0xb44a9b6905af7c801311e8f4e76932ee959c663c') { // BCP
+  if (address?.toLowerCase() === '0xb44a9b6905af7c801311e8f4e76932ee959c663c') {
+    // BCP
     return (
       <StyledEthereumLogo size={size} {...rest}>
         <img
           src={BCPLogo}
           style={{
             boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)',
-            borderRadius: '24px',
+            borderRadius: '24px'
           }}
           alt=""
         />
@@ -120,6 +122,37 @@ export default function TokenLogo({ address, header = false, size = '24px', ...r
     )
   }
 
+  if (address?.toLowerCase() === '0x53fdca9a60c911d4e58759b0ae39a2bf2efef5d4') {
+    // FiG
+    return (
+      <StyledEthereumLogo size={size} {...rest}>
+        <img
+          src={FiGLogo}
+          style={{
+            boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)',
+            borderRadius: '24px'
+          }}
+          alt=""
+        />
+      </StyledEthereumLogo>
+    )
+  }
+
+  // if (address?.toLowerCase() === '') {
+  //   // Kiwigo
+  //   return (
+  //     <StyledEthereumLogo size={size} {...rest}>
+  //       <img
+  //         src={KiwigoLogo}
+  //         style={{
+  //           boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)',
+  //           borderRadius: '24px'
+  //         }}
+  //         alt=""
+  //       />
+  //     </StyledEthereumLogo>
+  //   )
+  // }
 
   const path = `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/${isAddress(
     address
@@ -132,7 +165,7 @@ export default function TokenLogo({ address, header = false, size = '24px', ...r
         alt={''}
         src={path}
         size={size}
-        onError={(event) => {
+        onError={event => {
           BAD_IMAGES[address] = true
           setError(true)
           event.preventDefault()
