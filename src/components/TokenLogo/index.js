@@ -4,6 +4,7 @@ import { isAddress } from '../../utils/index.js'
 import PlaceHolder from '../../assets/placeholder.png'
 import EthereumLogo from '../../assets/eth.png'
 import SRKLogo from '../../assets/SRK.png'
+import OWNLogo from '../../assets/OWN.png'
 import BCPLogo from '../../assets/bitcashpay.png'
 import FiGLogo from '../../assets/FiG.png'
 import KiwigoLogo from '../../assets/Kiwigo.png'
@@ -91,7 +92,24 @@ export default function TokenLogo({ address, header = false, size = '24px', ...r
     )
   }
 
+  if (address?.toLowerCase() === '0x7665cb7b0d01df1c9f9b9cc66019f00abd6959ba') {
+    // Ownly
+    return (
+      <StyledEthereumLogo size={size} {...rest}>
+        <img
+          src={OWNLogo}
+          style={{
+            boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)',
+            borderRadius: '24px'
+          }}
+          alt=""
+        />
+      </StyledEthereumLogo>
+    )
+  }
+
   if (address?.toLowerCase() === '0x14b1166ab53a237c8ceaee2bbc4bbca200cb7da8') {
+    // SRK
     return (
       <StyledEthereumLogo size={size} {...rest}>
         <img
