@@ -7,6 +7,7 @@ import SRKLogo from '../../assets/SRK.png'
 import OWNLogo from '../../assets/OWN.png'
 import BCPLogo from '../../assets/bitcashpay.png'
 import FiGLogo from '../../assets/FiG.png'
+import KCLPLogo from '../../assets/KCLP.png'
 import KiwigoLogo from '../../assets/Kiwigo.png'
 import { useListedTokensMap } from '../../contexts/Application'
 
@@ -82,6 +83,22 @@ export default function TokenLogo({ address, header = false, size = '24px', ...r
       <StyledEthereumLogo size={size} {...rest}>
         <img
           src={SRKLogo}
+          style={{
+            boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)',
+            borderRadius: '24px'
+          }}
+          alt=""
+        />
+      </StyledEthereumLogo>
+    )
+  }
+
+  if (address?.toLowerCase() === '0x47b8806c2891c4a92b5c590c32cfe1eb617648ef') {
+    // KCLP
+    return (
+      <StyledEthereumLogo size={size} {...rest}>
+        <img
+          src={KCLPLogo}
           style={{
             boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)',
             borderRadius: '24px'
