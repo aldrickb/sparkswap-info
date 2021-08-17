@@ -93,7 +93,7 @@ export default function TokenLogo({ address, header = false, size = '24px', ...r
     )
   }
 
-  if (address?.toLowerCase() === '0x47b8806c2891c4a92b5c590c32cfe1eb617648ef ') {
+  if (address?.toLowerCase() === '0x47b8806c2891c4a92b5c590c32cfe1eb617648ef') {
     // KCLP
     return (
       <StyledEthereumLogo size={size} {...rest}>
