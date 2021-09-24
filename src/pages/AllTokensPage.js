@@ -14,6 +14,7 @@ function AllTokensPage() {
   const allTokens = useAllTokenData()
 
   useEffect(() => {
+    document.title = "Tokens | SparkSwap Info & Analytics"
     window.scrollTo(0, 0)
   }, [])
 

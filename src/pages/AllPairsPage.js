@@ -14,6 +14,7 @@ function AllPairsPage() {
   const allPairs = useAllPairData()
 
   useEffect(() => {
+    document.title = "Pairs | SparkSwap Info & Analytics"
     window.scrollTo(0, 0)
   }, [])
 

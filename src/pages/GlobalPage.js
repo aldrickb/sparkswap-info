@@ -57,6 +57,7 @@ function GlobalPage() {
   // scrolling refs
 
   useEffect(() => {
+    document.title = "Overview | SparkSwap Info & Analytics"
     document.querySelector('body').scrollTo({
       behavior: 'smooth',
       top: 0
