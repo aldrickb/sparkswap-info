@@ -9,6 +9,7 @@ import BCPLogo from '../../assets/bitcashpay.png'
 import FiGLogo from '../../assets/FiG.png'
 import KCLPLogo from '../../assets/KCLP.png'
 import KiwigoLogo from '../../assets/Kiwigo.png'
+import TipsyLogo from '../../assets/TIPSY.png'
 import { useListedTokensMap } from '../../contexts/Application'
 
 const BAD_IMAGES = {}
@@ -173,21 +174,21 @@ export default function TokenLogo({ address, header = false, size = '24px', ...r
     )
   }
 
-  // if (address?.toLowerCase() === '') {
-  //   // Kiwigo
-  //   return (
-  //     <StyledEthereumLogo size={size} {...rest}>
-  //       <img
-  //         src={KiwigoLogo}
-  //         style={{
-  //           boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)',
-  //           borderRadius: '24px'
-  //         }}
-  //         alt=""
-  //       />
-  //     </StyledEthereumLogo>
-  //   )
-  // }
+  if (address?.toLowerCase() === '0xf380334b9a181f54bf2f32fdd3e153d259472ebb') {
+    // TIPSY
+    return (
+      <StyledEthereumLogo size={size} {...rest}>
+        <img
+          src={TipsyLogo}
+          style={{
+            boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)',
+            borderRadius: '24px'
+          }}
+          alt=""
+        />
+      </StyledEthereumLogo>
+    )
+  }
 
   const path = `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/${isAddress(
     address
