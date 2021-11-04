@@ -11,6 +11,7 @@ import KCLPLogo from '../../assets/KCLP.png'
 import KiwigoLogo from '../../assets/Kiwigo.png'
 import TipsyLogo from '../../assets/TIPSY.png'
 import GZILALogo from '../../assets/GZILA.png'
+import FlashLogo from '../../assets/flash.png'
 import { useListedTokensMap } from '../../contexts/Application'
 
 const BAD_IMAGES = {}
@@ -197,6 +198,22 @@ export default function TokenLogo({ address, header = false, size = '24px', ...r
       <StyledEthereumLogo size={size} {...rest}>
         <img
           src={GZILALogo}
+          style={{
+            boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)',
+            borderRadius: '24px'
+          }}
+          alt=""
+        />
+      </StyledEthereumLogo>
+    )
+  }
+
+  if (address?.toLowerCase() === '0x5f0366c9962193fA774cdce9602195593B49f23C') {
+    // flash
+    return (
+      <StyledEthereumLogo size={size} {...rest}>
+        <img
+          src={FlashLogo}
           style={{
             boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)',
             borderRadius: '24px'
