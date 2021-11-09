@@ -13,6 +13,7 @@ import TipsyLogo from '../../assets/TIPSY.png'
 import GZILALogo from '../../assets/GZILA.png'
 import FlashLogo from '../../assets/flash.png'
 import { useListedTokensMap } from '../../contexts/Application'
+import { tokens as tokenList } from './tokenList'
 
 const BAD_IMAGES = {}
 
@@ -80,140 +81,12 @@ export default function TokenLogo({ address, header = false, size = '24px', ...r
     )
   }
 
-  if (address?.toLowerCase() === '0xc3440c10c4f36f354eb591b19fafb4906d449b75') {
-    // SRKb
+  const add = tokenList.find(token => token.address === address)
+  if (add) {
     return (
       <StyledEthereumLogo size={size} {...rest}>
         <img
-          src={SRKLogo}
-          style={{
-            boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)',
-            borderRadius: '24px'
-          }}
-          alt=""
-        />
-      </StyledEthereumLogo>
-    )
-  }
-
-  if (address?.toLowerCase() === '0x47b8806c2891c4a92b5c590c32cfe1eb617648ef') {
-    // KCLP
-    return (
-      <StyledEthereumLogo size={size} {...rest}>
-        <img
-          src={KCLPLogo}
-          style={{
-            boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)',
-            borderRadius: '24px'
-          }}
-          alt=""
-        />
-      </StyledEthereumLogo>
-    )
-  }
-
-  if (address?.toLowerCase() === '0x7665cb7b0d01df1c9f9b9cc66019f00abd6959ba') {
-    // Ownly
-    return (
-      <StyledEthereumLogo size={size} {...rest}>
-        <img
-          src={OWNLogo}
-          style={{
-            boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)',
-            borderRadius: '24px'
-          }}
-          alt=""
-        />
-      </StyledEthereumLogo>
-    )
-  }
-
-  if (address?.toLowerCase() === '0x14b1166ab53a237c8ceaee2bbc4bbca200cb7da8') {
-    // SRK
-    return (
-      <StyledEthereumLogo size={size} {...rest}>
-        <img
-          src={SRKLogo}
-          style={{
-            boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)',
-            borderRadius: '24px'
-          }}
-          alt=""
-        />
-      </StyledEthereumLogo>
-    )
-  }
-
-  if (address?.toLowerCase() === '0xb44a9b6905af7c801311e8f4e76932ee959c663c') {
-    // BCP
-    return (
-      <StyledEthereumLogo size={size} {...rest}>
-        <img
-          src={BCPLogo}
-          style={{
-            boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)',
-            borderRadius: '24px'
-          }}
-          alt=""
-        />
-      </StyledEthereumLogo>
-    )
-  }
-
-  if (address?.toLowerCase() === '0x53fdca9a60c911d4e58759b0ae39a2bf2efef5d4') {
-    // FiG
-    return (
-      <StyledEthereumLogo size={size} {...rest}>
-        <img
-          src={FiGLogo}
-          style={{
-            boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)',
-            borderRadius: '24px'
-          }}
-          alt=""
-        />
-      </StyledEthereumLogo>
-    )
-  }
-
-  if (address?.toLowerCase() === '0xf380334b9a181f54bf2f32fdd3e153d259472ebb') {
-    // TIPSY
-    return (
-      <StyledEthereumLogo size={size} {...rest}>
-        <img
-          src={TipsyLogo}
-          style={{
-            boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)',
-            borderRadius: '24px'
-          }}
-          alt=""
-        />
-      </StyledEthereumLogo>
-    )
-  }
-
-  if (address?.toLowerCase() === '0x4178934c6e313a062c5addd66ab0d9b8d858347a') {
-    // gzila
-    return (
-      <StyledEthereumLogo size={size} {...rest}>
-        <img
-          src={GZILALogo}
-          style={{
-            boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)',
-            borderRadius: '24px'
-          }}
-          alt=""
-        />
-      </StyledEthereumLogo>
-    )
-  }
-
-  if (address?.toLowerCase() === '0x5f0366c9962193fA774cdce9602195593B49f23C'.toLowerCase()) {
-    // flash
-    return (
-      <StyledEthereumLogo size={size} {...rest}>
-        <img
-          src={FlashLogo}
+          src={add.logo}
           style={{
             boxShadow: '0px 6px 10px rgba(0, 0, 0, 0.075)',
             borderRadius: '24px'
