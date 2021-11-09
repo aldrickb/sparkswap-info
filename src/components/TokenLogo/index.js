@@ -81,7 +81,7 @@ export default function TokenLogo({ address, header = false, size = '24px', ...r
     )
   }
 
-  const add = tokenList.find(token => token.address === address)
+  const add = tokenList.find(token => token.address === address?.toLowerCase())
   if (add) {
     return (
       <StyledEthereumLogo size={size} {...rest}>
