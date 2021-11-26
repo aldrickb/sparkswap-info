@@ -7,6 +7,7 @@ import KiwigoLogo from '../../assets/Kiwigo.png'
 import TipsyLogo from '../../assets/TIPSY.png'
 import GZILALogo from '../../assets/GZILA.png'
 import FlashLogo from '../../assets/flash.png'
+import ORELogo from '../../assets/ORE.png'
 
 export const tokens = [
   {
@@ -53,5 +54,10 @@ export const tokens = [
     name: 'FLASH',
     address: '0x5f0366c9962193fA774cdce9602195593B49f23C',
     logo: FlashLogo
+  },
+  {
+    name: 'OUTRACE',
+    address: '0xb901929C52475DA728d15bc25cfA6a37182c3268',
+    logo: ORELogo
   }
 ]
