@@ -117,10 +117,20 @@ const PollingDot = styled.div`
   background-color: ${({ theme }) => theme.green1};
 `
 
+const LogoContainer = styled.div`
+  display: flex;
+  marginLeft: 2rem;
+  width: 60%;
+  marginBottom: 5px;
+`
+const StyledImg = styled.img`
+  width: 100%;
+`
+
 const PoweredLogo = () => (
-  <div style={{ display: 'flex', marginLeft: '2rem', width: '60%', marginBottom: '5px' }}>
-    <img src={Powered} alt="poweredLogo" />
-  </div>
+  <LogoContainer>
+    <StyledImg src={Powered} alt="poweredLogo" />
+  </LogoContainer>
 )
 
 function SideNav({ history }) {
