@@ -8,8 +8,10 @@ import PairDataContextProvider, { Updater as PairDataContextUpdater } from './co
 import ApplicationContextProvider from './contexts/Application'
 import UserContextProvider from './contexts/User'
 import App from './App'
+import { loadData } from './utils/api';
 
 function ContextProviders({ children }) {
+
   return (
     <LocalStorageContextProvider>
       <ApplicationContextProvider>

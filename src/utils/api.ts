@@ -1,4 +1,5 @@
 const Axios = require('axios');
+const fs = require('fs');
 
 const fetchData = async () => {
     try {
@@ -8,7 +9,7 @@ const fetchData = async () => {
       }
 }
 
-const loadData = async () => {
+export const loadData = async () => {
     const response = await fetchData();
     let data = {}
     const fast = Object.assign(data, {fast: response.data.fast / 10});
@@ -16,9 +17,11 @@ const loadData = async () => {
     const safeLow = Object.assign(data, {safeLow: response.data.safeLow / 10});
     const average = Object.assign(data, {average: response.data.average / 10});
 
-    return data
+    const gas = JSON.stringify(data)
+    
+    fs.writeFile('../constants/json/gas.json', gas, (err) => {
+        if (err) return console.log(err);
+        console.log('Saved');
+    })
 }
 
-
-// loadData();
-loadData().then(console.log)
