@@ -17,7 +17,7 @@ const TitleWrapper = styled.div`
   z-index: 10;
 `
 
-const UniIcon = styled(Link)`
+const UniIcon = styled.a`
   transition: transform 0.3s ease;
   :hover {
     transform: rotate(-5deg);
@@ -31,10 +31,9 @@ export default function Title() {
     <TitleWrapper onClick={() => history.push('/')}>
       <Flex alignItems="center">
         <RowFixed>
-          <UniIcon id="link" onClick={() => history.push('/')}>
+          <UniIcon id="link" href='https://sparkswap.finance'>
             <img width={'108px'} style={{ marginLeft: '0px', marginTop: '0px', marginBottom: '0px' }} src={Wordmark} alt="logo" />
           </UniIcon>
-
         </RowFixed>
       </Flex>
     </TitleWrapper>
