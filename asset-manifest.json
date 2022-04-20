@@ -1,30 +1,31 @@
 {
   "files": {
-    "main.js": "/static/js/main.ed99201d.chunk.js",
-    "main.js.map": "/static/js/main.ed99201d.chunk.js.map",
+    "main.js": "/static/js/main.6c921205.chunk.js",
+    "main.js.map": "/static/js/main.6c921205.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.601f50a1.js",
     "runtime-main.js.map": "/static/js/runtime-main.601f50a1.js.map",
-    "static/js/2.8af0bdb8.chunk.js": "/static/js/2.8af0bdb8.chunk.js",
-    "static/js/2.8af0bdb8.chunk.js.map": "/static/js/2.8af0bdb8.chunk.js.map",
+    "static/js/2.88200103.chunk.js": "/static/js/2.88200103.chunk.js",
+    "static/js/2.88200103.chunk.js.map": "/static/js/2.88200103.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.61d51864dad1de907d523602e353a3af.js": "/precache-manifest.61d51864dad1de907d523602e353a3af.js",
+    "precache-manifest.4523195012eba918750f7dfaf2c0e983.js": "/precache-manifest.4523195012eba918750f7dfaf2c0e983.js",
     "service-worker.js": "/service-worker.js",
-    "static/js/2.8af0bdb8.chunk.js.LICENSE.txt": "/static/js/2.8af0bdb8.chunk.js.LICENSE.txt",
+    "static/js/2.88200103.chunk.js.LICENSE.txt": "/static/js/2.88200103.chunk.js.LICENSE.txt",
     "static/media/Desktop.svg": "/static/media/Desktop.04a97576.svg",
     "static/media/FiG.png": "/static/media/FiG.76f314a5.png",
     "static/media/GZILA.png": "/static/media/GZILA.a703eff1.png",
     "static/media/KCLP.png": "/static/media/KCLP.8e6dbfb5.png",
     "static/media/Kiwigo.png": "/static/media/Kiwigo.e8ab4a1d.png",
+    "static/media/MGG.png": "/static/media/MGG.135621aa.png",
     "static/media/OWN.png": "/static/media/OWN.31942fb0.png",
     "static/media/SRK.png": "/static/media/SRK.4cfa15c8.png",
-    "static/media/SparkDeFi_wordmark.svg": "/static/media/SparkDeFi_wordmark.06d5ee92.svg",
+    "static/media/SparkDeFi_wordmark.svg": "/static/media/SparkDeFi_wordmark.f831f6b4.svg",
     "static/media/eth.png": "/static/media/eth.73dabb37.png",
     "static/media/flash.png": "/static/media/flash.abafca1f.png",
     "static/media/logo_sqaure.png": "/static/media/logo_sqaure.63539be0.png"
   },
   "entrypoints": [
     "static/js/runtime-main.601f50a1.js",
-    "static/js/2.8af0bdb8.chunk.js",
-    "static/js/main.ed99201d.chunk.js"
+    "static/js/2.88200103.chunk.js",
+    "static/js/main.6c921205.chunk.js"
   ]
 }
