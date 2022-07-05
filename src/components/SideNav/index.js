@@ -191,7 +191,7 @@ function SideNav({ history }) {
           <AutoColumn
             style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', padding: '10px' }}
           >
-            <a href="https://app.srk.finance/#/" style={{ marginBottom: '10px' }}>
+            <a href="https://sparkswap.finance/#/" style={{ marginBottom: '10px' }}>
               <Option>
                 <Home size={20} style={{ marginRight: '.75rem' }} />
                 Home
@@ -200,7 +200,7 @@ function SideNav({ history }) {
             <a href="https://twitter.com/sparkpointio" style={{ marginBottom: '10px' }}>
               <Option>
                 <Twitter size={20} style={{ marginRight: '.75rem' }} />
-                SparkDeFi
+                SparkSwap
               </Option>
             </a>
 
@@ -309,7 +309,7 @@ function SideNav({ history }) {
                   Accounts
                 </Option>
               </BasicLink>
-              <a href="https://app.srk.finance/#/">
+              <a href="https://sparkswap.finance/#/">
                 <Option>SparkSwap</Option>
               </a>
             </MenuLinks>
