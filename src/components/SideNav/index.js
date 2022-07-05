@@ -266,8 +266,8 @@ function SideNav({ history }) {
                   Accounts
                 </Option>
               </BasicLink>
-              <a href="https://app.srk.finance/#/">
-                <Option>SparkDefi</Option>
+              <a href="sparkswap.finance">
+                <Option>SparkSwap</Option>
               </a>
             </MenuLinks>
           )}
@@ -310,7 +310,7 @@ function SideNav({ history }) {
                 </Option>
               </BasicLink>
               <a href="https://app.srk.finance/#/">
-                <Option>SparkDeFi</Option>
+                <Option>SparkSwap</Option>
               </a>
             </MenuLinks>
           )}
