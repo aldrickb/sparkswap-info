@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { Flex } from 'rebass'
 import Link from '../Link'
 import { RowFixed } from '../Row'
-import Wordmark from '../../assets/SparkDeFi_wordmark.svg'
+import Wordmark from '../../assets/SparkSwap_Workmark.png'
 
 const TitleWrapper = styled.div`
   text-decoration: none;
