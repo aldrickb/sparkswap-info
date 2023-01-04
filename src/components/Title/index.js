@@ -32,7 +32,7 @@ export default function Title() {
       <Flex alignItems="center">
         <RowFixed>
           <UniIcon id="link" href='https://sparkswap.finance'>
-            <img width={'108px'} style={{ marginLeft: '0px', marginTop: '0px', marginBottom: '0px' }} src={Wordmark} alt="logo" />
+            <img width="153.6px" src={Wordmark} alt="logo" />
           </UniIcon>
         </RowFixed>
       </Flex>

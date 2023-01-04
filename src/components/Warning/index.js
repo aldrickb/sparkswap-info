@@ -75,7 +75,7 @@ export default function Warning({ type, show, setShow, address }) {
                 href={'https://bscscan.com/address/' + address}
                 target="_blank"
               >
-                View {type === 'token' ? 'token' : 'pair'} contract on BSCScan
+                View {type === 'token' ? 'token' : 'pair'} contract on BscScan
               </Link>
             </Hover>
             <RowBetween style={{ marginTop: '20px' }}>
@@ -95,7 +95,7 @@ export default function Warning({ type, show, setShow, address }) {
                 href={'https://bscscan.com/address/' + address}
                 target="_blank"
               >
-                View {type === 'token' ? 'token' : 'pair'} contract on BSCScan
+                View {type === 'token' ? 'token' : 'pair'} contract on BscScan
               </Link>
             </Hover>
             <ButtonDark color={'#f82d3a'} style={{ minWidth: '140px' }} onClick={() => setShow(false)}>
