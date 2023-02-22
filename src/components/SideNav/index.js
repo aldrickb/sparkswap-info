@@ -197,7 +197,7 @@ function SideNav({ history }) {
                 Home
               </Option>
             </a>
-            <a href="https://twitter.com/sparkpointio" style={{ marginBottom: '10px' }}>
+            <a href="https://twitter.com/sparkdefi" rel="noopener noreferrer" target="_blank" style={{ marginBottom: '10px' }}>
               <Option>
                 <Twitter size={20} style={{ marginRight: '.75rem' }} />
                 SparkSwap
